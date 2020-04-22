@@ -1,3 +1,4 @@
+import api from '../../api/imgur';
 
 const K_TOKEN = 'imgur_token';
 
@@ -17,7 +18,9 @@ const mutations = {
 
 const actions = {
     finalizeLogin: () => {},
-    login: () => {},
+    login: () => {
+        api.login();
+    },
     logout: ({ commit }) => {
         commit('setToken', null);
         window.localStorage.removeItem(K_TOKEN);
