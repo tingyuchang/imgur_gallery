@@ -1,0 +1,23 @@
+<template>
+    <h3>
+        Login Processing...
+    </h3>    
+</template>
+
+<script>
+import { mapActions } from 'vuex';
+
+export default {
+    name: "AuthHandler",
+    created() {
+        this.finalizeLogin(window.location.hash);
+    },
+    methods: {
+        ...mapActions(['finalizeLogin']),
+    }
+}
+</script>
+
+<style scoped>
+
+</style>
